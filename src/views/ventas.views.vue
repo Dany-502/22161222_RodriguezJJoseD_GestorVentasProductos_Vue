@@ -82,6 +82,7 @@
               >
                 Ver Detalle
               </button>
+              <!-- Botón de edición deshabilitado temporalmente
               <button
                 class="btn-action btn-edit"
                 title="Editar Venta"
@@ -89,6 +90,7 @@
               >
                 Editar
               </button>
+              -->
               <button
                 class="btn-action btn-delete"
                 title="Eliminar Venta"
@@ -232,11 +234,13 @@ async function handleOpenCreateModal() {
   openCreateModal()
 }
 
-// Abrir modal de edición
+/*
+// Abrir modal de edición (deshabilitado temporalmente)
 async function handleOpenEditModal(venta) {
   await loadProductosCatalogo()
   openEditModal(venta)
 }
+*/
 
 // Abrir modal de detalle
 function openDetailModal(venta) {
@@ -249,13 +253,16 @@ function closeDetail() {
   selectedDetailVenta.value = null
 }
 
-// Guardar venta (crear o actualizar)
+// Guardar venta (solo creación activa)
 async function handleSaveVenta(payload) {
+  /*
   if (isEditing.value) {
     await updateItem(currentId.value, payload)
   } else {
     await createItem(payload)
   }
+  */
+  await createItem(payload)
 }
 
 // Eliminar venta

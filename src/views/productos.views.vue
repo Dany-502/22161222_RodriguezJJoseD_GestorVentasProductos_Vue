@@ -31,14 +31,6 @@
         />
       </div>
 
-      <div class="stock-filter">
-        <select v-model="selectedStockFilter" class="select-filter">
-          <option value="">Todos los productos</option>
-          <option value="in_stock">Con stock disponible</option>
-          <option value="out_of_stock">Agotados (Stock 0)</option>
-        </select>
-      </div>
-
       <button
         class="btn btn-secondary btn-reload"
         @click="loadProductos"
